@@ -1,0 +1,509 @@
+
+html{
+	height:100%;
+}
+body{
+	margin:0;
+	padding:0;
+	height:100%;
+	font-size:10px;
+	color:#003;
+	background:transparent url(bg.png) 0 0 repeat fixed;
+}
+
+/* headings and paragraph */
+
+h1,h2,h3,h4,h5,h6{
+	margin:.8em 0 .5em 0;
+	padding:0;
+	font-family:"Signika", sans-serif;
+	/*text-align:center;*/
+}
+h1{
+	font-size:2em;
+}
+h2{
+	font-size:1.8em;
+}
+h3{
+	font-size:1.6em;
+}
+h4{
+	font-size:1.4em;
+}
+h5{
+	font-size:1.2em;
+}
+h6{
+	/* use this as section separator */
+	font-size:1em;
+	text-align:center;
+	font-weight:normal;
+}
+p{
+	margin:.5em 0;
+	padding:0;
+}
+a, a:visited{
+	color:#003;
+	text-decoration:underline;
+}
+a:hover{
+	color:#336;
+	text-decoration:none;
+}
+
+/* text align for ad-hoc paragraph formatting */
+
+.lf{
+	text-align:left !important;
+}
+.rg{
+	text-align:right !important;
+}
+.cn{
+	text-align:center !important;
+}
+.jt{
+	text-align:justify !important;
+}
+
+/* generic containers */
+
+.wrap{
+	max-width:624px;
+	margin:0 auto;
+	padding:0;
+}
+.cont{
+	padding:8px 24px;
+}
+
+/* header */
+
+.site-header{
+	background:#336;
+	border-bottom:2px solid #99f;
+	box-shadow:0 0 8px #99f;
+}
+.site-header .wrap{
+	background:#338;
+	border-left:1px solid #77a;
+	border-right:1px solid #77a;
+	box-shadow:0 0 24px #99f;
+}
+.site-header .cont{
+	padding:4px 12px;
+}
+.site-header .cont:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.site-header .cont a,
+.site-header .cont a:visited{
+	display:inline-block;
+	margin:8px 0;
+	color:#ccf;
+	font:normal normal 2em "Signika", sans-serif;
+	text-decoration:none;
+	text-shadow:0px 0px 8px white;
+	letter-spacing:.2em;
+}
+.site-header .cont a:hover{
+	opacity:.8;
+}
+.site-title{
+	float:left;
+}
+
+/** navigation */
+
+.site-nav {
+	float:right;
+	display:block;
+}
+.site-nav-menu{
+	display:none !important;
+	float:right;
+}
+.site-nav-menu span{
+	display:inline-block;
+	vertical-align:middle;
+	height:24px;
+	width:24px;
+	background:transparent url(navicon.png) 0 0 no-repeat;
+}
+nav:after{
+	clear:both !important;
+}
+nav span{
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:4px;
+	font-size:.7em;
+	letter-spacing:0;
+	font-weight:normal;
+}
+nav .icon{
+	height:16px;
+	width:16px;
+	background:transparent url(icons.png) 0 0 no-repeat;
+	background-size:16px 80px; /* originally 24x120 */
+}
+nav .icon-about{
+}
+nav .icon-copying{
+	background-position:0 -16px;
+}
+nav .icon-github{
+	background-position:0 -32px;
+}
+nav .icon-twitter{
+	background-position:0 -48px;
+}
+nav .icon-feed{
+	background-position:0 -64px;
+}
+nav .tx{
+	display:none;
+}
+
+/* content, i.e. non-header non-footer container */
+
+.content{
+	height:100%;
+}
+.content .wrap{
+	/*min-height:100vh; doesn't work on older android */
+	min-height:100%;
+	background:white;
+	border-left:1px solid #66a;
+	border-right:1px solid #66a;
+	box-shadow:0 0 16px #66a;
+}
+.content .wrap:after{
+	display:block;
+	content:'';
+	float:left;
+}
+
+/* pagination */
+
+.post-list-cont{
+	margin-bottom:5em;
+}
+.prv{
+	float:right;
+}
+.nxt{
+	float:left;
+}
+ul.pagination{
+	padding:0;
+}
+ul.pagination li{
+	display:inline-block;
+}
+.pagination .icon{
+	display:inline-block;
+	vertical-align:middle;
+	height:24px;
+	width:24px;
+	background:transparent url(arrows.png) 0 0 no-repeat;
+}
+.pagination .icon.icon-prv{
+	background-position:0 -24px;
+}
+.pagination:after {
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+	clear: both;
+}
+.pagination a:hover {
+	opacity:0.7;
+}
+
+/* article header */
+
+.post-header{
+	padding:2em 0 5em 0;
+}
+.post-title{
+	font:normal normal 4em/1.2em "Signika", sans-serif;
+	margin-bottom:0;
+	text-align:center;
+}
+.post-meta, .post-taxa{
+	font:bold normal 1.4em "Signika", sans-serif !important;
+	color:#669;
+	text-transform:uppercase;
+	text-align:center;
+}
+
+/* article */
+
+article{
+	padding-bottom:1em;
+	font:normal normal 1.6em/1.4em "Open Sans", sans-serif;
+}
+article .emoji{
+	width:1em;
+	height:1em;
+	margin-top:-.3em;
+	padding:0;
+}
+article p{
+	margin:1em 0;
+	padding:0;
+	-moz-hyphens: auto;
+	-webkit-hypens: auto;
+	-o-hypens: auto;
+	hyphens: auto;
+}
+article code{
+	font-family:"Ubuntu Mono", monospace;
+}
+article p code{
+	font-size:1.1em;
+}
+article pre{
+	white-space:pre-wrap;
+	margin:.5em 0;
+	padding:1em;
+	border:1px solid #cce;
+	font-size:.9em;
+	line-height:1.4em;
+}
+article pre .lineno{
+	color:#ccc;
+}
+article p img{
+	float:right;
+	padding:.5em 0 .5em .5em;
+}
+article p img.emoji{
+	float:none;
+}
+article p img.cn{
+	display:block;
+	margin:0 auto;
+	max-width:100%;
+	float:none;
+}
+article img{
+	max-width:100%;
+}
+article blockquote{
+	margin:1em 1.5em;
+	padding:0 0 0 1.5em;
+	font-size:.9em;
+	line-height:1.4em;
+	border-left:6px solid #dde;
+}
+article blockquote > p:first-child{
+	margin-top:0;
+}
+article blockquote > p:last-child{
+	margin-bottom:0;
+}
+article blockquote > h6{
+	/* use this for citation */
+	font-weight:normal;
+	text-align:right;
+	font-family:"Open Sans", sans-serif !important;
+}
+article p sup,
+article p sub{
+	vertical-align:baseline;
+	position:relative;
+	font-size:.8em;
+}
+article p sup{
+	top:-.4em;
+}
+article p sub{
+	bottom:-.1em;
+}
+article hr{
+	border:none !important;
+	height:1px;
+	background:#99a;
+	box-shadow:0 0 8px 1px #ccf;
+}
+article h6 span{
+	font-weight:normal !important;
+	color:#99c;
+}
+
+/** table */
+
+article > table{
+	margin:.5em auto;
+	border-spacing:0;
+	border-collapse:collapse;
+	empty-cells:show;
+}
+article > table th{
+	background:#aac;
+}
+article > table th,
+article > table td{
+	border:1px solid #cce;
+	padding:.25em .4em;
+	vertical-align:middle;
+}
+
+/* list */
+
+h1.post-list-header{
+	text-align:center;
+}
+.post-list{
+	padding:0;
+	max-width:80%;
+	margin:2em auto 0 auto;
+}
+.post-list li{
+	list-style-type:none;
+	margin:0 0 2em 0;
+	text-align:center;
+}
+.post-list li h2{
+	margin:0;
+}
+a.post-link,
+a.post-link:visited{
+	font:normal normal 1.6em "Signika", sans-serif;
+	color:#003;
+}
+a.post-link:hover{
+	color:#336;
+	text-decoration:none;
+}
+
+/* footer */
+
+.site-footer{
+	clear:both; /* clear .content .wrap:after */
+	background:#336;
+	border-top:1px solid #99f;
+	box-shadow:0 0 2px #99f;
+}
+.site-footer .wrap{
+	background:#338;
+	border-left:1px solid #77a;
+	border-right:1px solid #77a;
+	box-shadow:0 0 24px #99f;
+	text-align:right;
+}
+.site-footer .cont{
+	padding:3px 6px;
+	color:#aaf;
+	font:normal normal 1.2em "Signika", sans-serif;
+}
+.site-footer span{
+	float:left;
+	text-shadow:0px 0px 4px #99c;
+}
+.site-footer a,
+.site-footer a:visited{
+	color:#ccf;
+	text-decoration:none;
+}
+.site-footer a:hover{
+	opacity:.8;
+}
+
+/* viewport */
+
+@media all and (max-width: 624px) {
+	.content .wrap{
+		border:none;
+	}
+	.site-header .cont a,
+	.site-header .cont a:visited{
+		font-size:2.5em;
+	}
+	nav .icon{
+		height:24px;
+		width:24px;
+		background-size:24px 120px;
+	}
+	nav .icon-copying{
+		background-position:0 -24px;
+	}
+	nav .icon-github{
+		background-position:0 -48px;
+	}
+	nav .icon-twitter{
+		background-position:0 -72px;
+	}
+	nav .icon-feed{
+		background-position:0 -96px;
+	}
+	nav .tx{
+		display:none;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.content .wrap{
+		border:none;
+	}
+	.post-title{
+		font-size:2.5em;
+	}
+	.post-meta{
+		font-size:1em;
+	}
+	article.post-content {
+		font-size:1.4em;
+	}
+	.post-list{
+		max-width:none;
+	}
+	a.post-link{
+		font-size:1.4em;
+	}
+
+	/* nav */
+
+	.site-nav-menu{
+		display:block !important;
+		float:right;
+	}
+	.site-nav{
+		display:none;
+		float:none;
+		margin:0 auto;
+		clear:both;
+	}
+	nav{
+		margin-top:-8px;
+	}
+	nav:after{
+		content:'';
+		height:1px;
+		display:block;
+		padding-bottom:2px;
+	}
+	nav a{
+		display:block !important;
+		margin:0;
+	}
+	nav a:hover{
+		background:#37377a;
+		box-shadow:0 0 12px #66a;
+	}
+	nav a .icon{
+		margin:0 0 0 4px;
+	}
+	nav a .tx{
+		display:inline-block;
+		margin:0 0 0 8px;
+	}
+}
+

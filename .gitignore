@@ -1,0 +1,9 @@
+
+*~
+*.swp
+*.log
+*.lock
+
+/_site
+/css/*.png
+

@@ -1,0 +1,38 @@
+
+title: caTaTan
+baseurl: "/catatan"
+url: "https://your.github.io"
+timezone: Asia/Jakarta
+owner : Your Name
+epoch : 2014
+twitter_username: yourtweet
+github_username:  yourgit
+permalink: /:year/:month/:day/:title/
+paginate: 2
+markdown: redcarpet
+redcarpet:
+    extensions: 
+        - tables
+        - autolink
+        - strikethrough
+        - underline
+        - highlight
+        - lax_spacing
+        - superscript
+        - space_after_headers
+        - with_toc_data
+        - footnotes
+        - fenced_code_blocks
+        - no_intra_emphasis
+        - smart
+gems:
+    - jemoji
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - prepare-label.sh
+    - prepare-icons.sh
+    - preview-bundle.sh
+
