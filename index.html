@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% capture pg %}
+<ul class="pagination">
+	{% if paginator.previous_page %}
+	<li class='nxt'>
+		<a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
+			<span class='icon icon-nxt'></span>
+		</a>
+	</li>
+	{% endif %}
+	{% if paginator.next_page %}
+	<li class='prv'>
+		<a href="{{ site.baseurl }}{{ paginator.next_page_path }}">
+			<span class='icon icon-prv'></span>
+		</a>
+	</li>
+	{% endif %}
+</ul>
+{% endcapture %}
+<div class='cont'>
+{{ pg }}
+<div class="post-list-cont">
+	<h1 class='post-list-header'>Articles</h1>
+	<ul class="post-list">
+		{% for post in paginator.posts %}
+			<li>
+				<span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+				<h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+{{ pg }}
+</div>

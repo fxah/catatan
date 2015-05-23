@@ -1,0 +1,49 @@
+{% capture year %}
+	{{ site.epoch }}
+	{% assign this_year = 'now' | date: '%Y' | times:1 %}
+	{% if site.epoch != this_year %}- {{ this_year }}{% endif %}
+{% endcapture %}
+<footer class="site-footer">
+	<div class='wrap'>
+		<div class='cont'>
+			<span><a href="{{ site.baseurl }}/copying/">&copy; {{ year }} {{ site.owner }}</a></span> powered by <a href="http://jekyllrb.com">jekyll</a>
+		</div>
+	</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	// center images with no sibling nodes
+	$('article p img').each(function(k,v){
+		if ($(v).hasClass('emoji'))
+			return;
+		if ($(v).parent().children().length > 1)
+			return;
+		if ($(v).parent().contents().filter(function(){
+			return this.nodeType == 3 && this.textContent.trim() != '';
+			}).length > 0)
+			return;
+		$(v).addClass('cn');
+	});
+	$('.site-nav-menu').click(function(e){
+		// menu dropdown
+		e.preventDefault();
+		$('.site-nav').toggle('fast');
+	});
+});
+var _debounce = (function(){
+	var t = {};
+	return function(cb, dl, uid) {
+		if (t[uid])
+			clearTimeout(t[uid]);
+		t[uid] = setTimeout(cb, dl);
+	}
+})();
+$(window).resize(function(){
+	_debounce(function(){
+		// menu after resize
+		if ($(window).width() > 480 && !$('.site-nav').is(':visible'))
+			$('.site-nav').show();
+	}, 50, 'check-nav');
+});
+</script>
